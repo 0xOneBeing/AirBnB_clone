@@ -134,5 +134,6 @@ help or help <command> Ex:
 
 # `Authors`
 
-Adaugo Sandra Onuecheghekwu <onuecheghekwuadaugo@gmail.com>
-Sunday Oruwhone <sundayoruwhone@gmail.com>
+* Adaugo Sandra Onuecheghekwu <onuecheghekwuadaugo@gmail.com>
+
+* Sunday Oruwhone <sundayoruwhone@gmail.com>
