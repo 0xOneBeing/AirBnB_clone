@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """Defines the User class."""
+# Import the BaseModel class from a custom module.
 from models.base_model import BaseModel
 
-
+# Define the User class.
 class User(BaseModel):
     """Represent a User.
 
@@ -13,7 +14,9 @@ class User(BaseModel):
         last_name (str): The last name of the user.
     """
 
+    # Initialize attributes for the User class.
     email = ""
     password = ""
     first_name = ""
     last_name = ""
+

@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Defines the FileStorage class."""
+# Import necessary modules.
 import json
 from models.base_model import BaseModel
 from models.user import User
@@ -9,7 +10,7 @@ from models.place import Place
 from models.amenity import Amenity
 from models.review import Review
 
-
+# Define the FileStorage class for abstracted storage.
 class FileStorage:
     """Represent an abstracted storage engine.
 
@@ -17,6 +18,7 @@ class FileStorage:
         __file_path (str): The name of the file to save objects to.
         __objects (dict): A dictionary of instantiated objects.
     """
+    # Define the default file path and an empty dictionary to hold objects.
     __file_path = "file.json"
     __objects = {}
 
@@ -47,3 +49,4 @@ class FileStorage:
                     self.new(eval(cls_name)(**o))
         except FileNotFoundError:
             return
+

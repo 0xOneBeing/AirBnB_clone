@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """Defines the Place class."""
+# Import the BaseModel class from a custom module.
 from models.base_model import BaseModel
 
-
+# Define the Place class.
 class Place(BaseModel):
     """Represent a place.
 
@@ -20,6 +21,7 @@ class Place(BaseModel):
         amenity_ids (list): A list of Amenity ids.
     """
 
+    # Initialize attributes for the Place class.
     city_id = ""
     user_id = ""
     name = ""
@@ -31,3 +33,4 @@ class Place(BaseModel):
     latitude = 0.0
     longitude = 0.0
     amenity_ids = []
+
