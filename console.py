@@ -12,7 +12,7 @@ from models.place import Place
 from models.amenity import Amenity
 from models.review import Review
 
-
+# Helper function to parse the arguments based on parentheses or square brackets
 def parse(arg):
     curly_braces = re.search(r"\{(.*?)\}", arg)
     brackets = re.search(r"\[(.*?)\]", arg)
@@ -30,7 +30,7 @@ def parse(arg):
         retl.append(curly_braces.group())
         return retl
 
-
+# Define the HBNBCommand class for the HolbertonBnB command interpreter
 class HBNBCommand(cmd.Cmd):
     """Defines the HolbertonBnB command interpreter.
 
@@ -38,6 +38,7 @@ class HBNBCommand(cmd.Cmd):
         prompt (str): The command prompt.
     """
 
+    # Set the command prompt
     prompt = "(hbnb) "
     __classes = {
         "BaseModel",
@@ -49,10 +50,12 @@ class HBNBCommand(cmd.Cmd):
         "Review"
     }
 
+    # Define a handler for empty lines
     def emptyline(self):
         """Do nothing upon receiving an empty line."""
         pass
 
+    # Define the default behavior for invalid commands
     def default(self, arg):
         """Default behavior for cmd module when input is invalid"""
         argdict = {
@@ -74,15 +77,18 @@ class HBNBCommand(cmd.Cmd):
         print("*** Unknown syntax: {}".format(arg))
         return False
 
+    # Define the 'quit' command to exit the program
     def do_quit(self, arg):
         """Quit command to exit the program."""
         return True
 
+    # Define the 'EOF' signal to exit the program
     def do_EOF(self, arg):
         """EOF signal to exit the program."""
         print("")
         return True
 
+    # Define the 'create' command to create a new class instance
     def do_create(self, arg):
         """Usage: create <class>
         Create a new class instance and print its id.
@@ -96,6 +102,7 @@ class HBNBCommand(cmd.Cmd):
             print(eval(argl[0])().id)
             storage.save()
 
+    # Define the 'show' command to display the string representation of an instance
     def do_show(self, arg):
         """Usage: show <class> <id> or <class>.show(<id>)
         Display the string representation of a class instance of a given id.
@@ -113,6 +120,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             print(objdict["{}.{}".format(argl[0], argl[1])])
 
+    # Define the 'destroy' command to delete an instance
     def do_destroy(self, arg):
         """Usage: destroy <class> <id> or <class>.destroy(<id>)
         Delete a class instance of a given id."""
@@ -130,6 +138,7 @@ class HBNBCommand(cmd.Cmd):
             del objdict["{}.{}".format(argl[0], argl[1])]
             storage.save()
 
+    # Define the 'all' command to display all instances of a class
     def do_all(self, arg):
         """Usage: all or all <class> or <class>.all()
         Display string representations of all instances of a given class.
@@ -146,6 +155,7 @@ class HBNBCommand(cmd.Cmd):
                     objl.append(obj.__str__())
             print(objl)
 
+    # Define the 'count' command to retrieve the number of instances of a class
     def do_count(self, arg):
         """Usage: count <class> or <class>.count()
         Retrieve the number of instances of a given class."""
@@ -156,6 +166,7 @@ class HBNBCommand(cmd.Cmd):
                 count += 1
         print(count)
 
+    # Define the 'update' command to add or update an attribute
     def do_update(self, arg):
         """Usage: update <class> <id> <attribute_name> <attribute_value> or
        <class>.update(<id>, <attribute_name>, <attribute_value>) or
@@ -205,6 +216,6 @@ class HBNBCommand(cmd.Cmd):
                     obj.__dict__[k] = v
         storage.save()
 
-
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
+
