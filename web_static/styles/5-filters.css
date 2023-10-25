@@ -1,0 +1,29 @@
+.filters {
+    height: 70px;
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.locations, .amenities {
+    height: 100%;
+    width: 25%;
+    padding-left: 30px;
+}
+
+.locations {
+    border-right: 1px solid #DDDDDD;
+}
+
+h3 {
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+h4 {
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0;
+}
