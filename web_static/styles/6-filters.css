@@ -1,0 +1,53 @@
+.filters {
+    height: 70px;
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.locations, .amenities {
+    height: 100%;
+    width: 25%;
+    position: relative;
+}
+
+.locations {
+    border-right: 1px solid #DDDDDD;
+}
+
+h3 {
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+h4 {
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0;
+}
+
+.popover {
+    display: none;
+    background-color: #FAFAFA;
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    list-style: none;
+    position: absolute;
+    padding: 0;
+}
+
+.locations:hover .popover, .amenities:hover .popover {
+    display: block;
+}
+
+.popover ul {
+    list-style: none;
+}
+
+.popover h2 {
+    font-size: 16px;
+    margin-bottom: 0;
+}
